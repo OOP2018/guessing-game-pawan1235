@@ -54,7 +54,11 @@ public class NumberGame {
 		return Integer.MAX_VALUE;  // not very helpful :-)
 	}
 	
-	public int getCoung() {
+	/**
+	 * Return how many times user has been guessed.
+	 * @return number of user's guess.
+	 */
+	public int getCount() {
 		return 0;
 	}
     
