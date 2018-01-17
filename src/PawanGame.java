@@ -6,7 +6,7 @@ import java.util.Random;
  * @author Pawan Intawongsa
  *
  */
-public class GuessingGame extends NumberGame{
+public class PawanGame extends NumberGame{
 	/** upper bound for secret number */
 	private int upperBound;
 	/**  the answer of the game*/
@@ -19,7 +19,7 @@ public class GuessingGame extends NumberGame{
 	 * 
 	 * @param upperBound upperbound for secret number.
 	 */
-	public GuessingGame(int upperBound) {
+	public PawanGame(int upperBound) {
 		this.count = 0;
 		long seed = System.nanoTime();
 		Random rand = new Random(seed);
@@ -69,11 +69,9 @@ public class GuessingGame extends NumberGame{
 	/**
 	 * Return Game's description.
 	 * 
+	 * @return game's description.
 	 */
 	public String toString() {
 		return "Guess a secret number between 1 and "+this.upperBound;
 	}
-	
-	
-	 
 }
