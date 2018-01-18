@@ -6,7 +6,7 @@
 public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
-		int upperBound = 101;
+		int upperBound = 100;
 		NumberGame game = new PawanGame(upperBound);
 		GameConsole ui = new GameConsole( );
 		GameSolver solve = new GameSolver();

@@ -18,6 +18,8 @@ public class GameSolver {
 		int min = 1;
 		int guessNum = min + (max - min)/2;
 		while (!game.guess(guessNum)) {
+			System.out.println("Your answer ? ");
+			System.out.println(game.getMessage()+guessNum);
 			if (game.getMessage().contains("too small")) {
 				min = guessNum + 1;
 				guessNum = min + (max - min)/2;
@@ -26,8 +28,6 @@ public class GameSolver {
 				max = guessNum - 1;
 				guessNum = min + (max - min)/2;
 			}
-			System.out.println(game.getMessage());
-			System.out.println("Your answer ? "+guessNum);
 		}
 		System.out.println(game.getMessage());
 		return guessNum;
