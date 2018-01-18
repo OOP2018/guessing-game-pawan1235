@@ -25,7 +25,8 @@ public class PawanGame extends NumberGame{
 		Random rand = new Random(seed);
 		this.secret = rand.nextInt(upperBound)+1;
 		this.upperBound = upperBound;
-		setMessage("I'm thinking of a number between 1 and "+this.upperBound);		
+		setMessage("I'm thinking of a number between 1 and "+this.upperBound);	
+		System.out.println("Secret is "+this.secret);
 	}
 	
 	/**
