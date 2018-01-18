@@ -18,7 +18,7 @@ public class GameSolver {
 		int min = 1;
 		int guessNum = min + (max - min)/2;
 		while (!game.guess(guessNum)) {
-			System.out.println("Your answer ? ");
+			System.out.println("Your answer ? "+guessNum);
 			System.out.println(game.getMessage());
 			if (game.getMessage().contains("too small")) {
 				min = guessNum + 1;
