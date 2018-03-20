@@ -1,3 +1,4 @@
+package game;
 import java.util.Random;
 
 /**
@@ -47,6 +48,8 @@ public class PawanGame extends NumberGame{
 				setMessage("Wrong, The answer is too large");
 				count++;
 			}
+			this.setChanged();
+			this.notifyObservers(number);
 			return false;
 		}
 	}
