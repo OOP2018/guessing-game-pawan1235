@@ -34,7 +34,7 @@ public class GameConsole implements java.util.Observer{
 
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.printf("You have guessed %d times",this.game.getCount());
+		System.out.printf("You have guessed %d times\n",this.game.getCount());
 	}
 
 }

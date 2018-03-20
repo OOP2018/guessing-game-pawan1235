@@ -11,9 +11,12 @@ public class PawanGame extends NumberGame{
 	/** upper bound for secret number */
 	private int upperBound;
 	/**  the answer of the game*/
-	private int secret;
+	public int secret;
 	/** number of user's guess*/
 	private int count;
+	
+	private long seed = System.nanoTime();
+	private Random rand = new Random(seed);
 	
 	/**
 	 * Initialize a new GuessingGame. 
@@ -22,11 +25,11 @@ public class PawanGame extends NumberGame{
 	 */
 	public PawanGame(int upperBound) {
 		this.count = 0;
-		long seed = System.nanoTime();
-		Random rand = new Random(seed);
-		this.secret = rand.nextInt(upperBound)+1;
+//		long seed = System.nanoTime();
+//		Random rand = new Random(seed);
 		this.upperBound = upperBound;
-		setMessage("I'm thinking of a number between 1 and "+this.upperBound);	
+		this.secret = rand.nextInt(upperBound)+1;
+//		setMessage("I'm thinking of a number between 1 and "+this.upperBound);	
 	}
 	
 	/**

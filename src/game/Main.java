@@ -10,7 +10,9 @@ public class Main {
 		int upperBound = 100;
 		NumberGame game = new PawanGame(upperBound);
 		GameSolver solve = new GameSolver();
-		int solution = solve.play(game);
-		System.out.println("The answer is "+solution +". You have guessed "+game.getCount()+" times");
+		GameConsole game2 = new GameConsole((PawanGame) game);
+		game2.play(game);
+//		int solution = solve.play(game);
+//		System.out.println("The answer is "+solution +". You have guessed "+game.getCount()+" times");
 	}
 }

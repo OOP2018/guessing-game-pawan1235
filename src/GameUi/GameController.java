@@ -25,7 +25,6 @@ public class GameController {
 	public void guessHandle(ActionEvent event) {
 		try {
 			int guessNum = Integer.parseInt(inputText.getText().trim());
-			hintLabel.setText(this.game.getMessage());
 			End = game.guess(guessNum);
 			if (End) {
 				Lebel.setText("Correct !!!");
@@ -37,6 +36,7 @@ public class GameController {
 			guessButton.setText("Invalid Number");
 			guessButton.setStyle("-fx-text-fill: red");
 		}
+		hintLabel.setText(this.game.getMessage());
 		inputText.clear();
 	}
 
