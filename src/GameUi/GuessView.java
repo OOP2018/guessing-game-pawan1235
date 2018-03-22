@@ -10,13 +10,18 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * Gui for show that latest number that user counted
+ * @author Pawan Intawongsa
+ *
+ */
 public class GuessView implements java.util.Observer{
 
 	private Stage stage;
 	private Label label;
 	private int guess = 0;
 	/**
-	 * Initialize a CountHintView, which show value of game.
+	 * Initialize a GuesstView, which show value of game.
 	 */
 	public GuessView() {
 		initComponents();
@@ -41,15 +46,24 @@ public class GuessView implements java.util.Observer{
 		stage.sizeToScene();
 	}
 	
+	/**
+	 * Run GuessView
+	 */
 	public void run() {
 		stage.show();
 		displayGuess();
 	}
 	
+	/**
+	 * Set text to label to show the latest number that user counted
+	 */
 	public void displayGuess() {
 		label.setText(String.format("%2d", guess));
 	}
 	
+	/**
+	 * Update to observer
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		if(arg1 != null) {

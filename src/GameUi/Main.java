@@ -10,10 +10,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+/**
+ * Main class to run GuessingGame GUI
+ * @author Pawan Intawongsa
+ *
+ */
 public class Main  extends Application{
 
-	
+	/**
+	 * Initiate the GUI for GuessingGame
+	 */
 	@Override
 	public void start(Stage stage) throws Exception {
 		PawanGame game = new PawanGame(100);
@@ -49,6 +55,11 @@ public class Main  extends Application{
 		guess.run();
 
 	}
+	/**
+	 * Run the GussingGame GUI
+	 * @param args
+	 * 	
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}	

@@ -42,7 +42,10 @@ public class PawanGame extends NumberGame{
 		if(this.secret == number) {
 			setMessage("Correct, the answer is "+this.secret);
 			count++;
+			this.setChanged();
+			this.notifyObservers(number);
 			return true;
+			
 		}else {
 			if(number < this.secret) {
 				setMessage("Wrong, The answer is too small");

@@ -11,17 +11,32 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * Gui for Show how many time user have counted.
+ * 
+ * @author Pawan Intawongsa
+ *
+ */
 public class CountView implements java.util.Observer {
 
 	private Stage stage;
 	private PawanGame game;
 	private Label label;
 
+	/**
+	 * Constructor for CountView
+	 * 
+	 * @param game
+	 *            is class Game that extends NumberGame We want to input.
+	 */
 	public CountView(PawanGame game) {
 		this.game = game;
 		initComponents();
 	}
 
+	/**
+	 * Initiate javafx for CountView Class.
+	 */
 	private void initComponents() {
 		stage = new Stage();
 		HBox root = new HBox();
@@ -38,17 +53,24 @@ public class CountView implements java.util.Observer {
 		stage.sizeToScene();
 	}
 
+	/**
+	 * Run CountView
+	 */
 	public void run() {
 		stage.show();
 		displayCount();
 	}
 
-
+	/**
+	 * Set text in label to show how many times you have counted
+	 */
 	private void displayCount() {
 		label.setText(String.format("%2d", game.getCount()));
 	}
 
-
+	/**
+	 * Update to observer.
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		displayCount();
