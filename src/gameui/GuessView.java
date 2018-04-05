@@ -1,8 +1,7 @@
-package GameUi;
+package gameui;
 
 import java.util.Observable;
 
-import game.PawanGame;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,30 +11,24 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * Gui for Show how many time user have counted.
- * 
+ * Gui for show that latest number that user counted
  * @author Pawan Intawongsa
  *
  */
-public class CountView implements java.util.Observer {
+public class GuessView implements java.util.Observer{
 
 	private Stage stage;
-	private PawanGame game;
 	private Label label;
-
+	private int guess = 0;
 	/**
-	 * Constructor for CountView
-	 * 
-	 * @param game
-	 *            is class Game that extends NumberGame We want to input.
+	 * Initialize a GuesstView, which show value of game.
 	 */
-	public CountView(PawanGame game) {
-		this.game = game;
+	public GuessView() {
 		initComponents();
 	}
 
 	/**
-	 * Initiate javafx for CountView Class.
+	 * Create UI to show the last number that you guess.
 	 */
 	private void initComponents() {
 		stage = new Stage();
@@ -49,30 +42,34 @@ public class CountView implements java.util.Observer {
 		root.getChildren().add(label);
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setTitle("Count Guest");
+		stage.setTitle("Guess number");
 		stage.sizeToScene();
 	}
-
+	
 	/**
-	 * Run CountView
+	 * Run GuessView
 	 */
 	public void run() {
 		stage.show();
-		displayCount();
+		displayGuess();
 	}
-
+	
 	/**
-	 * Set text in label to show how many times you have counted
+	 * Set text to label to show the latest number that user counted
 	 */
-	private void displayCount() {
-		label.setText(String.format("%2d", game.getCount()));
+	public void displayGuess() {
+		label.setText(String.format("%2d", guess));
 	}
-
+	
 	/**
-	 * Update to observer.
+	 * Update to observer
 	 */
 	@Override
-	public void update(Observable o, Object arg) {
-		displayCount();
+	public void update(Observable arg0, Object arg1) {
+		if(arg1 != null) {
+			guess = (int) arg1;
+		}
+		displayGuess();
 	}
+
 }

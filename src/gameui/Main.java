@@ -1,4 +1,4 @@
-package GameUi;
+package gameui;
 
 import java.net.URL;
 

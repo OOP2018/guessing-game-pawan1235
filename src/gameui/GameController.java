@@ -1,4 +1,4 @@
-package GameUi;
+package gameui;
 
 import javafx.event.ActionEvent;
 import game.PawanGame;
